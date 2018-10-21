@@ -4,10 +4,10 @@ num=360/bin;
 flag=0;
 for i=1:num
     if i==1
-        bazindex=(baz<=bin)&(baz>=360-bin);
+        bazindex=(baz<=bin/2)&(baz>=360-bin/2);
         rfcount(i)=sum(bazindex);
     else
-        bazindex=(baz<=(bin*i))&(baz>=(bin*i-bin));
+        bazindex=(baz<=(bin*i-bin/2))&(baz>=(bin*i-3*bin/2));
     rfcount(i)=sum(bazindex);
     end
     if rfcount(i)~=0
